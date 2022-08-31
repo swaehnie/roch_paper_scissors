@@ -8,38 +8,78 @@
 
 import random
 
-symbols_de = ["Schere", "Stein", "Papier"]
-symbols_eng = ["rock", "paper", "scissors"]
-symbols_fr = ["pierre", "ciseaux", "papier"]
+languagepack_de = ["Schere", "Stein", "Papier", "Auswahl: Schere, Stein, Papier? ", "Unentschieden", "PC hat gewonnen!", "Du hast gewonnen!"]
 
+languagepack_eng = ["rock", "paper", "scissors", "Selection: rock, paper, scissors? ", "Draw", "PC has won!", "You have won!"]
 
-main = 1
+languagepack_fr = ["pierre", "ciseaux", "papier", "Sélection: pierre, ciseaux, papier? ", "Match nul", "Le PC a gagné", "Tu as gagné" ]
+
+#check language
+language = input("englisch (e), deutsch (d), français (f) ")
+if language == "e":
+    symbols = languagepack_eng [0:3]
+    symbols_language = symbols
+    text_player_choice = languagepack_eng [3]
+    text_winnings = languagepack_eng [4:7]
+    
+if language == "d":
+    symbols = languagepack_de [0:3]
+    symbols_language = symbols
+    text_player_choice = languagepack_de [3]
+    text_winnings = languagepack_de [4:7]
+    
+if language == "f":
+    symbols = languagepack_fr [0:3]
+    symbols_language = symbols
+    text_player_choice = languagepack_fr [3]
+    text_winnings = languagepack_fr [4:7]
 
 # game
-while main ==1:
+main = 1
+while main == 1:
+    print("symbols:", symbols)
+    print("symbols_language:", symbols_language)
+    print("text_player_choice: ", text_player_choice)
+    print("text_winnings:", text_winnings)
     # pc choice
-    random.shuffle(symbols_de)
+    random.shuffle(symbols)
     # print(symbols)
-    symbol_choice_pc = random.choice(symbols_de)
+    symbol_choice_pc = random.choice(symbols)
     # print(symbol_choice_pc)
 
     # player choice
-    symbol_choice_player = input ("Auswahl: Schere, Stein, Papier? ").capitalize()
+    if language == "d":
+        symbol_choice_player = input (text_player_choice+" ").capitalize()
+    else:
+        symbol_choice_player = input (text_player_choice+" ")
 
-    if symbol_choice_player in symbols_de:
+
+    if symbol_choice_player in symbols:
         print (symbol_choice_pc+" vs "+symbol_choice_player)
         
-        if symbol_choice_pc == symbol_choice_player: print("Unentschieden")
+        if symbol_choice_pc == symbol_choice_player: print(text_winnings[0])
     
         # pc winnings
-        if symbol_choice_pc == "Schere" and symbol_choice_player == "Papier": print("PC hat gewonnen!")
-        if symbol_choice_pc == "Stein" and symbol_choice_player == "Schere": print("PC hat gewonnen!")
-        if symbol_choice_pc == "Papier" and symbol_choice_player == "Stein": print("PC hat gewonnen!")
+        # Schere vs Papier
+        if symbol_choice_pc == symbols_language[0] and symbol_choice_player == symbols_language[2]:
+            print(text_winnings[1])
+        # Stein vs Schere
+        if symbol_choice_pc == symbols_language[1] and symbol_choice_player == symbols_language[0]:
+            print(text_winnings[1])
+        # Papier vs Stein
+        if symbol_choice_pc == symbols_language[2] and symbol_choice_player == symbols_language[1]:
+            print(text_winnings[1])
     
         # player winnings
-        if symbol_choice_player == "Schere" and symbol_choice_pc == "Papier": print("Du hast gewonnen!")
-        if symbol_choice_player == "Stein" and symbol_choice_pc == "Schere": print("Du hast gewonnen!")
-        if symbol_choice_player == "Papier" and symbol_choice_pc == "Stein": print("Du hast gewonnen!")
+        # Schere vs Papier
+        if symbol_choice_player == symbols_language[0] and symbol_choice_pc == symbols_language[2]:
+            print(text_winnings[2])
+        # Stein vs Schere
+        if symbol_choice_player == symbols_language[1] and symbol_choice_pc == symbols_language[0]:
+            print(text_winnings[2])
+        # Papier vs Stein
+        if symbol_choice_player == symbols_language[2] and symbol_choice_pc == symbols_language[1]:
+            print(text_winnings[2])
     
     else:
         print ("Falsche Eingabe")
