@@ -9,6 +9,10 @@
 import random
 
 symbols_de = ["Schere", "Stein", "Papier"]
+symbols_eng = ["rock", "paper", "scissors"]
+symbols_fr = ["pierre", "ciseaux", "papier"]
+
+
 main = 1
 
 # game
