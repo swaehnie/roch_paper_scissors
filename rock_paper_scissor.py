@@ -3,7 +3,7 @@
 # created: 31.08.2022
 # created by: swaehnie
 # contact: swaehnie (https://github.com/swaehnie)
-# file: 
+# repository: https://github.com/swaehnie/rock_paper_scissors
 # 
 
 import random
