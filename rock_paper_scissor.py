@@ -8,21 +8,21 @@
 
 import random
 
-symbols = ["Schere", "Stein", "Papier"]
+symbols_de = ["Schere", "Stein", "Papier"]
 main = 1
 
 # game
 while main ==1:
     # pc choice
-    random.shuffle(symbols)
+    random.shuffle(symbols_de)
     # print(symbols)
-    symbol_choice_pc = random.choice(symbols)
+    symbol_choice_pc = random.choice(symbols_de)
     # print(symbol_choice_pc)
 
     # player choice
     symbol_choice_player = input ("Auswahl: Schere, Stein, Papier? ").capitalize()
 
-    if symbol_choice_player in symbols:
+    if symbol_choice_player in symbols_de:
         print (symbol_choice_pc+" vs "+symbol_choice_player)
         
         if symbol_choice_pc == symbol_choice_player: print("Unentschieden")
