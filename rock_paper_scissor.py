@@ -18,19 +18,19 @@ languagepack_fr = ["pierre", "ciseaux", "papier", "Sélection: pierre, ciseaux, 
 language = input("englisch (e), deutsch (d), français (f) ")
 if language == "e":
     symbols = languagepack_eng [0:3]
-    symbols_language = symbols
+    symbols_language = languagepack_eng [0:3]
     text_player_choice = languagepack_eng [3]
     text_winnings = languagepack_eng [4:7]
     
 if language == "d":
     symbols = languagepack_de [0:3]
-    symbols_language = symbols
+    symbols_language = languagepack_de [0:3]
     text_player_choice = languagepack_de [3]
     text_winnings = languagepack_de [4:7]
     
 if language == "f":
     symbols = languagepack_fr [0:3]
-    symbols_language = symbols
+    symbols_language = languagepack_fr [0:3]
     text_player_choice = languagepack_fr [3]
     text_winnings = languagepack_fr [4:7]
 
