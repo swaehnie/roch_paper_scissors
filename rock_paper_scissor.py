@@ -37,13 +37,13 @@ if language == "f":
 # game
 main = 1
 while main == 1:
-    print("symbols:", symbols)
-    print("symbols_language:", symbols_language)
-    print("text_player_choice: ", text_player_choice)
-    print("text_winnings:", text_winnings)
+    # print("symbols:", symbols)
+    # print("symbols_language:", symbols_language)
+    # print("text_player_choice: ", text_player_choice)
+    # print("text_winnings:", text_winnings)
+    
     # pc choice
     random.shuffle(symbols)
-    # print(symbols)
     symbol_choice_pc = random.choice(symbols)
     # print(symbol_choice_pc)
 
